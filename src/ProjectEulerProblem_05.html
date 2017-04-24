@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			Project Euler Problem 05
+		</title>
+	</head>
+	<script type="text/javascript">
+		function solve(){
+			var resultDom= document.getElementById("result");
+			console.log("In the solve function ");
+			var result = 0;
+			var flag, j=1;
+			do{
+				flag = true;
+				for(i=1;i<=20;i++){
+					if(j%i!=0){
+						flag = false;
+						break;
+					}
+				}
+				if(flag)
+					result = j;
+				j++;
+
+			}while(flag!=true)
+			
+			resultDom.innerHTML=resultDom.innerHTML+" <b>"+result+"</b>";
+		}
+		
+	</script>
+	<body>
+		<p>
+			<b>Problem Statement :</b><br/>
+			2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.<br>What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+		</p>
+		<input type="button" name="find" onclick="solve()" value="Result">
+		<p id="result">Result is :</p>
+		
+	</body>
+</html>

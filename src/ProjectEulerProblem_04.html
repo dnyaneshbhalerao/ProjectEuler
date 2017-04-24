@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			Project Euler Problem 04
+		</title>
+	</head>
+	<script type="text/javascript">
+		function solve(){
+			var resultDom= document.getElementById("result");
+			console.log("In the solve function ");
+			var result = 0;
+			var flag = false;
+			for (var i = 999; i>99; i--) {
+				for(var j = 999;j>99 ; j--){
+					if(isPalimdrome(i*j)){
+						if(i*j>result)
+							result = i*j;
+						
+					}
+				}
+			}
+			resultDom.innerHTML=resultDom.innerHTML+" <b>"+result+"</b>";
+		}
+		
+		function isPalimdrome(num){
+			var num1 = num.toString();
+			num1=num1.split("").reverse().join("");
+			//console.log(num);
+			if(num1==num){
+				console.log("Numbers are :"+num+" "+num1);
+				return true;
+			}
+			return false;
+		}
+	</script>
+	<body>
+		<p>
+			<b>Problem Statement :</b><br/>
+			A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 x 99.<br>
+			Find the largest palindrome made from the product of two 3-digit numbers.
+		</p>
+		<input type="button" name="find" onclick="solve()" value="Result">
+		<p id="result">Result is :</p>
+		
+	</body>
+</html>

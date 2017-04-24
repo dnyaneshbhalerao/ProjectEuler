@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			Project Euler Problem 05
+		</title>
+	</head>
+	<script type="text/javascript">
+		function solve(){
+			var resultDom= document.getElementById("result");
+			console.log("In the solve function ");
+			var result = 0;
+			var sum1 = 0, sum2 = 0;
+			for(var i= 0; i <= 100 ; i++){
+				sum1 = sum1 + i*i;
+				sum2 = sum2 + i;
+
+			}
+			result = sum2*sum2 - sum1;
+			resultDom.innerHTML=resultDom.innerHTML+" <b>"+result+"</b>";
+		}
+		
+	</script>
+	<body>
+		<p>
+			<b>Problem Statement :</b><br/>
+			The sum of the squares of the first ten natural numbers is,<br>
+			<p>1<sup>2</sup> + 2<sup>2</sup> + ... + 10<sup>2</sup> = 385</p>
+			The square of the sum of the first ten natural numbers is,
+			<p>(1 + 2 + ... + 10)<sup>2</sup> = 55<sup>2</sup> = 3025</p>
+			<p>Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640.</p>
+			Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+		</p>
+		<input type="button" name="find" onclick="solve()" value="Result">
+		<p id="result">Result is :</p>
+		
+	</body>
+</html>
