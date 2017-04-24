@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<title>
+			Project Euler Problem 07
+		</title>
+	</head>
+	<script type="text/javascript">
+		function solve(){
+			var resultDom= document.getElementById("result");
+			console.log("In the solve function ");
+			var result = 0;
+			var i=2;j=0;
+			do{
+				if(isPrime(i)){
+					j++;
+					result = i;
+				}
+				i++;
+			}while(j!=10001);
+			
+			resultDom.innerHTML=resultDom.innerHTML+" <b>"+result+"</b>";
+		}
+		function isPrime(num){
+			console.log("In is Prime Number Function" + num);
+			var flag = new Boolean(true);
+			for(var j = 2; j <=(num / 2); j++ ){
+				if (num % j == 0){
+					flag = false;
+					break ; 
+				}
+			}
+			if(flag)
+				return true;
+			return false;
+		}
+	</script>
+	<body>
+		<p>
+			<b>Problem Statement :</b><br/>
+			By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.<br>
+			What is the 10001st prime number?
+		<input type="button" name="find" onclick="solve()" value="Result">
+		<p id="result">Result is :</p>
+		
+	</body>
+</html>
