@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Project Euler Problem 07
+    </title>
+  </head>
+  <script type="text/javascript">
+    function solve(){
+      var resultDom = document.getElementById("result");
+      var sum = 2, i = 0;
+      var arr = [2];
+      var flag = false;
+      for(c=5;c<2000000;c++){
+        do{
+            if(c % arr[i] == 0){
+              flag = true;
+              break;
+            }
+
+        }while(i++ <arr.length);
+        if(!flag){
+          if(isPrime(c)){
+            if(arr.length<10)
+              arr.push(c);
+            console.log("Prime Number"+c);
+            sum = sum + c;
+          }
+        }
+        i = 0;
+        flag = false;   
+      }
+      resultDom.innerHTML=resultDom.innerHTML+sum;
+    }
+    function isPrime(num){
+      //console.log("In is Prime Number Function" + num);
+      var flag = new Boolean(true);
+      for(var j = 2; j <=(num / 2); j++ ){
+        if (num % j == 0){
+          flag = false;
+          break ; 
+        }
+      }
+      if(flag)
+        return true;
+      return false;
+    }
+  </script>
+  <body>
+    <p>
+      <b>Problem Statement :</b><br/>
+      The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.<br>
+      Find the sum of all the primes below two million.<br><br>
+    <input type="button" name="find" onclick="solve()" value="Result">
+    <p id="result">Result is :</p>
+    
+  </body>
+</html>

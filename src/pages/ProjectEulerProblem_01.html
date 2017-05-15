@@ -9,15 +9,15 @@
 		function solve(){
 			var resultDom= document.getElementById("result");
 			console.log("In the solve function");
-			var sum=0;
-			for (var i = 0; i <1000; i++) {
-				if(i%3==0||i%5==0){
+			var sum = 0;
+			for (var i = 0; i < 1000; i++) {
+				if(i % 3 == 0 || i % 5 == 0){
 					sum=sum+i;
-					console.log("This is the number divided by 3 and 5 "+i);
+					console.log("This is the number divided by 3 and 5 " + i);
 				}
 			}
 			console.log("Result is "+sum);
-		resultDom.innerHTML=resultDom.innerHTML+" <b> </b>"+sum;
+		resultDom.innerHTML = resultDom.innerHTML + " <b> </b>" + sum;
 		}
 	</script>
 	<body>

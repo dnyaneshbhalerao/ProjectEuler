@@ -8,40 +8,35 @@
 	<script type="text/javascript">
 		function solve(number){
 
-			var resultDom= document.getElementById("result");
-			console.log("In the solve function "+number);
+			var resultDom = document.getElementById("result");
+			console.log("In the solve function " + number);
 			var largestPrimeFact=0;
 			var temp;
-			for (var i = 2; i<=number/2; i++) {
+			for (var i = 2; i <= number / 2; i++) {
 				if(number % i == 0){
 					if(isPrime(i)){
 						console.log("The Final Prime "+i);
-						if(largestPrimeFact<i){
+						if(largestPrimeFact < i){
 							largestPrimeFact = i;
 							console.log("Largest Prime = "+largestPrimeFact);
 						}
 					}
 				}
-				if(i==2)
-					setTimeout(function(){alert("The program still running")},30);
-
 			}
 			console.log("Exit!!!!!!!!!!!");
-			resultDom.innerHTML=resultDom.innerHTML+" <b> </b>"+largestPrimeFact;
+			resultDom.innerHTML = resultDom.innerHTML + " <b> </b>" + largestPrimeFact;
 		}
 		// function to calculate Prime Ffactor
 		function isPrime(num){
 			console.log("In is Prime Number Function" + num);
-			var flag = new Boolean(true);
+			var prime = new Boolean(true);
 			for(var j = 2; j <=(num / 2); j++ ){
 				if (num % j == 0){
 					flag = false;
 					break ; 
 				}
 			}
-			if(flag)
-				return true;
-			return false;
+			return prime;
 		}
 	</script>
 	<body>

@@ -6,23 +6,27 @@
 		</title>
 	</head>
 	<script type="text/javascript">
-		function solve(){
-			var resultDom= document.getElementById("result");
+		function solve() {
+			var resultDom = document.getElementById("result");
 			console.log("In the solve function");
-			var fab=0, sum=0;
-			var f1=0,f2=1;
-			for (var i = 1; fab <4000000; i++) {
+			var fab = 0, sum = 0;
+			var f1 = 0,f2 = 1;
+			for (var i = 1; fab < 4000000; i++) {
 				
 				fab = f1 + f2;
 				f1 = f2;
 				f2 = fab;
 				if (fab >4000000)
 					break;
-				if(fab % 2 == 0)
+				if(even(fab)) {
 					sum = sum + fab;
+				}
 				console.log(fab);
 			}
 			resultDom.innerHTML=resultDom.innerHTML+" <b> </b>"+sum;
+		}
+		function even(n) {
+			return n % 2 == 0
 		}
 	</script>
 	<body>
