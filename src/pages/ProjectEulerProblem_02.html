@@ -5,28 +5,28 @@
 			Project Euler Problem 02
 		</title>
 	</head>
-	<script type="text/javascript">
-		function solve() {
+	<script type = "text/javascript">
+		function sumOfFab() {
 			var resultDom = document.getElementById("result");
-			console.log("In the solve function");
-			var fab = 0, sum = 0;
-			var f1 = 0,f2 = 1;
-			for (var i = 1; fab < 4000000; i++) {
-				
-				fab = f1 + f2;
-				f1 = f2;
-				f2 = fab;
-				if (fab >4000000)
+			var FinalFabo = 0, sum = 0;
+			var firstFabo = 0, secondFabo = 1;
+			
+			for (var i = 1; FinalFabo < 4000000; i++) {
+				FinalFabo = firstFabo + secondFabo;
+				firstFabo = secondFabo;
+				secondFabo = FinalFabo;
+				if (FinalFabo > 4000000){
 					break;
-				if(even(fab)) {
-					sum = sum + fab;
 				}
-				console.log(fab);
+				if (isEven(FinalFabo)) {
+					sum = sum + FinalFabo;
+				}
 			}
-			resultDom.innerHTML=resultDom.innerHTML+" <b> </b>"+sum;
+			resultDom.innerHTML = resultDom.innerHTML + " <b> "+sum+"</b>";
 		}
-		function even(n) {
-			return n % 2 == 0
+
+		function isEven( n ) {
+			return (n % 2 == 0);
 		}
 	</script>
 	<body>
@@ -36,7 +36,7 @@
 			1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...<br>
 			By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 		</p>
-		<input type="button" name="find" onclick="solve()" value="Result">
+		<input type="button" name="find" onclick="sumOfFab()" value="Result">
 		<p id="result">Result is :</p>
 		
 	</body>

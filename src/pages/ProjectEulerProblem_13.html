@@ -120,11 +120,14 @@
         '20849603980134001723930671666823555245252804609722',
         '53503534226472524250874054075591789781264330331690'
       ];
-      for 
-      var result = solve(number); 
-      result = result.toString();
-      console.log("Result is "+ result);
-      resultDom.innerHTML =resultDom.innerHTML + result.substr(0, 9);
+      var sum = 0;
+      for (var i = 0; i < numbers.length; i++ ){
+        sum = parseInt(sum)  + parseInt(numbers[i].substr(0, 13));
+        console.log(sum);
+      }
+      sum = sum.toString();
+      console.log("Result is "+ sum.substr(0, 10));
+      resultDom.innerHTML =resultDom.innerHTML + sum.substr(0, 10);
       }
   </script>
   <body>

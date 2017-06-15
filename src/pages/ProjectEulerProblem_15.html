@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Project Euler Problem 07
+    </title>
+  </head>
+  <script type="text/javascript">
+    let sum = 0;
+    function solve() {
+      console.log( totalRoute(40, 20 ));
+      alert("Done");
+    }
+    function totalRoute(n, r) {
+      return (fact(n)/fact(r)/fact(n-r));
+    }
+    function fact(n) {
+      if(n <= 1) {
+        return 1;
+      }
+      return n * fact(n-1);
+    }
+
+    /*function isRoute(down, right, length){
+      if (down >  20|| right > 20 )
+        return 0;
+      if(down == 20 && right == 20 && length == 40) {
+        //console.log("Found");
+        return 1;
+      }
+      return isRoute(down, right + 1, length + 1 ) + isRoute (down + 1 , right , length + 1 ) ;
+    }  */
+  </script>
+  <body>
+    <p>
+      <b>Problem Statement :</b><br/>
+      Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.<br>
+      <center>
+        <img src="../../img/p015.gif">
+      </center><br>
+      NOTE: Once the chain starts the terms are allowed to go above one million.<br>
+    <input type="button" name="find" onclick="solve()" value="Result">
+    <p id="result">Result is :</p>
+    
+  </body>
+</html>

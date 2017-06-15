@@ -6,33 +6,32 @@
 		</title>
 	</head>
 	<script type="text/javascript">
-		function solve(number){
-
+		function findLargestPrime(number){
 			var resultDom = document.getElementById("result");
-			console.log("In the solve function " + number);
-			var largestPrimeFact=0;
+			var largestPrimeFact = 0;
 			var temp;
-			for (var i = 2; i <= number / 2; i++) {
-				if(number % i == 0){
-					if(isPrime(i)){
-						console.log("The Final Prime "+i);
-						if(largestPrimeFact < i){
-							largestPrimeFact = i;
-							console.log("Largest Prime = "+largestPrimeFact);
-						}
+			for (var i = 2 ; i <= number / 2; i++) {
+				if(isFactorOf(i, number) && isPrime(i)) {
+					console.log("The Prime Facotrs is: "+i);
+					if(largestPrimeFact < i){
+						largestPrimeFact = i;
 					}
 				}
 			}
-			console.log("Exit!!!!!!!!!!!");
-			resultDom.innerHTML = resultDom.innerHTML + " <b> </b>" + largestPrimeFact;
+			//console.log("Largest Prime = "+largestPrimeFact);
+			resultDom.innerHTML = "Result is: " + 
+														" <b> " + largestPrimeFact+ "</b>";
 		}
-		// function to calculate Prime Ffactor
+
+		function isFactorOf(i, number) {
+			return (number % i == 0);
+		}
+
 		function isPrime(num){
-			console.log("In is Prime Number Function" + num);
 			var prime = new Boolean(true);
-			for(var j = 2; j <=(num / 2); j++ ){
+			for(var j = 2; j <= (num / 2); j++ ){
 				if (num % j == 0){
-					flag = false;
+					prime = false;
 					break ; 
 				}
 			}
@@ -45,7 +44,7 @@
 			The prime factors of 13195 are 5, 7, 13 and 29.<br>
 			What is the largest prime factor of the number 600851475143 ?
 		</p>
-		<input type="button" name="find" onclick="solve(600851475143)" value="Result">
+		<input type="button" name="find" onclick="findLargestPrime(600851475143)" value="Result">
 		<p id="result">Result is :</p>
 		
 	</body>
