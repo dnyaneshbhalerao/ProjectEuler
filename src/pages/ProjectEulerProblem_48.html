@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Project Euler Problem 07
+    </title>
+  </head>
+  <script type="text/javascript">
+    var sum = 0;
+    var length = 0;
+    function findSum() {
+      for(var n = 1; n <= 100; n++ ) {
+        sum = sum + nTerm(n);
+        length = sum.toString().length;
+        if(length >= 10) {
+          //console.log(sum);
+          sum = sum.toString().substring(length - 10, length);
+          console.log(sum);
+          sum = parseInt(sum);
+        }
+      }
+      console.log("Final " + sum);
+    }
+    function nTerm(n) {
+      var str = Math.pow(n, n).toString();
+      return .length >=10 ?
+        Math.pow(n, n).toString().substring;
+    }
+    //var resultDom = document.getElementById("result");
+      //resultDom.innerHTML = resultDom.innerHTML + "<strong> " + sum +"</strong>";
+  </script>
+  <body>
+    <p>
+      <b>Problem Statement :</b><br/>
+      The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.<br>
+      Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.<br><br>
+    <input type="button" name="find" onclick="findSum()" value="Result">
+    <p id="result">Result is :</p>
+    
+  </body>
+</html>

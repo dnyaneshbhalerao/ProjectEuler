@@ -6,9 +6,9 @@
     </title>
   </head>
   <script type="text/javascript">
-    let sum = 0;
+    let sum = 0,  number = 0;
     function solve() {
-      console.log( totalRoute(40, 20 ));
+       number  = totalRoute(40, 20 );
       alert("Done");
     }
     function totalRoute(n, r) {
@@ -21,15 +21,8 @@
       return n * fact(n-1);
     }
 
-    /*function isRoute(down, right, length){
-      if (down >  20|| right > 20 )
-        return 0;
-      if(down == 20 && right == 20 && length == 40) {
-        //console.log("Found");
-        return 1;
-      }
-      return isRoute(down, right + 1, length + 1 ) + isRoute (down + 1 , right , length + 1 ) ;
-    }  */
+    var resultDom = document.getElementById("result");
+      resultDom.innerHTML = resultDom.innerHTML + "<strong> " + number+"</strong>";
   </script>
   <body>
     <p>
