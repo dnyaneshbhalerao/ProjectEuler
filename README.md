@@ -5,5 +5,5 @@
   For provinding solution to project Euler problems.
 
 # Description : 
-  It has similar GUI as that of Project Euler.
+  It has similar UI like Project Euler with extra link for the solutions.
   
